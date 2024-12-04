@@ -1,0 +1,23 @@
+{
+    "name": "chatwoot-",
+    "version": "1.0.0",
+    "description": "A Google Cloud Function to decode and verify JWT tokens",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "jsonwebtoken": "^8.5.1",  
+      "@google-cloud/functions-framework": "^3.1.1",
+      "@google-cloud/dialogflow-cx": "^4.2.0",
+      "express": "^4.17.1",
+      "axios": "^0.26.1",
+      "@google-cloud/bigquery": "^6.0.0",
+      "@google-cloud/pubsub": "^3.0.0"
+  
+    },
+    "engines": {
+      "node": ">=14.0.0"
+    }
+  }
+  
