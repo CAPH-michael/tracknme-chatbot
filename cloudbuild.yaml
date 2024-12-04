@@ -1,0 +1,32 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - chatwoot-webhook-v2
+  - --gen2
+  - --memory=1Gi
+  - --cpu=1.0
+  - --timeout=3600
+  - --region=us-central1
+  - --source=.
+  - --trigger-http
+  - --runtime=nodejs20
+  - --entry-point=helloHttp
+  - --allow-unauthenticated
+  
+
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - run
+  - services
+  - update
+  - chatwoot-webhook-v2
+  - --region=us-central1
+  - --service-min-instances=0
+
+
+options:
+  logging: CLOUD_LOGGING_ONLY
